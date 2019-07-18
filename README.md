@@ -19,12 +19,14 @@ $ touch Dockerfile
 # 4 - Install express.
 $ npm install express
 ```
+## Definitions
 ```node
 # index.js
 # Very important, HOST '0.0.0.0', for Docker, redirect port 3000. 
 
 const HOST = '0.0.0.0';
 ```
+## Docker config
 ```DOCKER
 # DOCKERFILE
 # 1 - NODE ALPINE: This is a simple version the operational system and last version of NodeJs.
@@ -78,6 +80,7 @@ $ docker run -p 3000:3000 -d first_app/dockernode
 *** COMMAND: docker ps
 
 ```
+## .dockerignore
 ```NODE
 # Create file .dockerignore.
 $ touch .dockerignore
