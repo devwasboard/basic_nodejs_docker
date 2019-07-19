@@ -89,3 +89,59 @@ $ touch .dockerignore
 # define files and folders what not to be copied for container.
 nome_modules
 ```
+## DOCKER-COMPOSE
+```CMD
+# Create file docker-compose
+$ touch docker-compose.yml
+```
+```dockercompose.yml
+# Version dockercompose
+version: "3"
+
+# command: Command run aplication.
+command: npm start
+
+# Aplication port.
+    ports: 
+      - "3000:3000"
+# Folder what reflect alterations.
+    volumes: 
+      - .:/usr/app
+
+*** Atention install NODEMON.***
+
+# COMMAND: Start from docker-compose.yml
+$ docker-compose up
+
+RESULT:
+    
+    Creating network "basic_nodejs_docker_default" with the default driver
+    Building app
+    Step 1/7 : FROM node:alpine
+    ---> a9a8b83644f7
+    Step 2/7 : WORKDIR /usr/app
+    ---> Using cache
+    ---> 30bdc96e67a2
+    Step 3/7 : COPY package*.json ./
+    ---> 5f7acf6cad78
+    Step 4/7 : RUN npm install
+    ---> Running in 7c56dd925b1b
+
+```
+## NODEMON
+```CMD
+# Install nodemon
+$ npm install nodemon
+
+# List the containners
+$ docker ps
+
+# Stop containner execution
+$ docker stop [CONTAINER ID]
+
+# Remove contanner
+$ docker rm 896bee0794ef
+
+# Start containner with DOCKER COMPOSE
+$ docker-compose up
+```
